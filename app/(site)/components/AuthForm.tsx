@@ -150,7 +150,7 @@ const AuthForm = () => {
           />
           <div>
             <Button disabled={isLoading} fullWidth type="submit">
-              {variant === 'LOGIN' ? 'Sign in' : 'Register'}
+              {variant === 'LOGIN' ? 'Đăng nhập' : 'Đăng ký'}
             </Button>
           </div>
         </form>
@@ -169,7 +169,7 @@ const AuthForm = () => {
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="bg-white px-2 text-gray-500">
-                Or continue with
+                Hoặc tiếp tục đăng nhập bằng
               </span>
             </div>
           </div>
@@ -197,13 +197,13 @@ const AuthForm = () => {
           "
         >
           <div>
-            {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+            {variant === 'LOGIN' ? 'Lần đầu vào app Messhi?' : 'Đã có tài khoản?'}
           </div>
           <div
             onClick={toggleVariant}
             className="underline cursor-pointer"
           >
-            {variant === 'LOGIN' ? 'Create an account' : 'Login'}
+            {variant === 'LOGIN' ? 'Tạo tài khoản' : 'Đăng nhập'}
           </div>
         </div>
       </div>
