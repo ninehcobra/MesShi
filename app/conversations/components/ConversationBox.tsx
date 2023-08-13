@@ -17,9 +17,9 @@ interface ConversationBoxProps {
   selected?: boolean;
 }
 
-const ConversationBox: React.FC<ConversationBoxProps> = ({ 
-  data, 
-  selected 
+const ConversationBox: React.FC<ConversationBoxProps> = ({
+  data,
+  selected
 }) => {
   const otherUser = useOtherUser(data);
   const session = useSession();
@@ -36,8 +36,8 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
   }, [data.messages]);
 
   const userEmail = useMemo(() => session.data?.user?.email,
-  [session.data?.user?.email]);
-  
+    [session.data?.user?.email]);
+
   const hasSeen = useMemo(() => {
     if (!lastMessage) {
       return false;
@@ -55,17 +55,17 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
 
   const lastMessageText = useMemo(() => {
     if (lastMessage?.image) {
-      return 'Sent an image';
+      return 'Đã gửi một ảnh';
     }
 
     if (lastMessage?.body) {
       return lastMessage?.body
     }
 
-    return 'Started a conversation';
+    return 'Bắt đầu cuộc trò chuyện';
   }, [lastMessage]);
 
-  return ( 
+  return (
     <div
       onClick={handleClick}
       className={clsx(`
@@ -96,7 +96,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
               {data.name || otherUser.name}
             </p>
             {lastMessage?.createdAt && (
-              <p 
+              <p
                 className="
                   text-xs 
                   text-gray-400 
@@ -107,19 +107,19 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
               </p>
             )}
           </div>
-          <p 
+          <p
             className={clsx(`
               truncate 
               text-sm
               `,
               hasSeen ? 'text-gray-500' : 'text-black font-medium'
             )}>
-              {lastMessageText}
-            </p>
+            {lastMessageText}
+          </p>
         </div>
       </div>
     </div>
   );
 }
- 
+
 export default ConversationBox;
