@@ -20,8 +20,8 @@ interface ConversationListProps {
   title?: string;
 }
 
-const ConversationList: React.FC<ConversationListProps> = ({ 
-  initialItems, 
+const ConversationList: React.FC<ConversationListProps> = ({
+  initialItems,
   users
 }) => {
   const [items, setItems] = useState(initialItems);
@@ -79,9 +79,9 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
   return (
     <>
-      <GroupChatModal 
-        users={users} 
-        isOpen={isModalOpen} 
+      <GroupChatModal
+        users={users}
+        isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
       <aside className={clsx(`
@@ -99,10 +99,10 @@ const ConversationList: React.FC<ConversationListProps> = ({
         <div className="px-5">
           <div className="flex justify-between mb-4 pt-4">
             <div className="text-2xl font-bold text-neutral-800">
-              Messages
+              Tin nhắn
             </div>
-            <div 
-              onClick={() => setIsModalOpen(true)} 
+            <div
+              onClick={() => setIsModalOpen(true)}
               className="
                 rounded-full 
                 p-2 
@@ -126,7 +126,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         </div>
       </aside>
     </>
-   );
+  );
 }
- 
+
 export default ConversationList;
